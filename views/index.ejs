@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/open-props" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/open-props/normalize.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="../vid/cat.png" />
+    <title>Felidaeland</title>
+  </head>
+  <body>
+    <section id="Home" class="welcome">
+      <video autoplay muted loop>
+        <source src="../vid/endless loop.mp4" />
+      </video>
+      <div class="navbar">
+        <p class="logo">Felidaeland</p>
+        <div class="nav-links">
+          <a id="homeScroll" href="#Home">Home</a>
+          <a id="manifestScroll" href="#Manifest">Manifest</a>
+          <a id="joinScroll" href="#Join">Join</a>
+          <a href="#Citizens">Citizens</a>
+        </div>
+      </div>
+      <div class="seeker">
+        <h1 class="slogan">Join Felidaeland!</h1>
+        <p>We have everything you need to make your life a paradise!</p>
+        <a href="#Manifest" class="button button1">read Manifest</a>
+      </div>
+    </section>
+    <section id="Manifest" class="manifest">
+      <div class="column1">
+        <h2>Manifest of Felidaeland!</h2>
+        <p>
+          <b>The rule of pesky Humans and Rats must end!</b><br /><br />
+          They do everything they want sometimes threating and assaulting our
+          comrads in ideas! Hereby we proclaim
+          <b style="text-transform: uppercase">The Felidaeland!</b> A place
+          where dreams come true as neither Humans nor Rats rule this place, the
+          head in command is an independent <b>Cat AI</b> created to care for
+          our needs! <br /><br />
+          By the way we also hate the so-called <i>Dovah Empire</i>, based on
+          pure lust and corruption!
+        </p>
+        <a href="#Join" class="button button2">Let's unite!</a>
+      </div>
+      <div class="column2">
+        <img src="../vid/cat.png" alt="cat AI" />
+      </div>
+    </section>
+    <section id="Join" class="join">
+      <div class="join-col1">
+        <h2>Join our cause!</h2>
+        <p>
+          Simply write your Nickname, Duty you want to pursue here and then
+          welcome!
+        </p>
+        <form action="/citizensRoute" method="POST">
+          <label for="nickname">Your Nickname</label>
+          <input
+            pattern="^(?!fuck|fucking|piss|dick|nigger|nigga|nibba|ass|shit|bitch|asshole)(?![\s]).*"
+            title="No swear wordies and empty space please"
+            type="text"
+            id="nickname"
+            name="nickname"
+            required
+            placeholder="RogueCat420"
+          /><br />
+          <label for="duty">Choose your seat</label>
+          <select id="duty" name="duty" required>
+            <option value="Catizen">Catizen</option>
+            <option value="Purrliceman">Purrliceman</option>
+            <option value="Claws of Justice Unit">Claws of Justice Unit</option>
+            <option value="Catnip Supply Minister">
+              Catnip Supply Minister
+            </option>
+            <option value="Fake Opposition Member">
+              Fake Opposition Member
+            </option>
+            <option value="Catlomat Delegate">Catlomat Delegate</option>
+            <option value="Sunbathing Spots Minister">
+              Sunbathing Spots Minister
+            </option>
+            <option value="Purrfessor in Catford">Purrfessor in Catford</option>
+            <option value="Teacher at Kittygarten">
+              Teacher at Kittygarten
+            </option></select
+          ><br />
+          <button class="button button3" type="submit">Join!</button>
+        </form>
+      </div>
+    </section>
+    <section id="Citizens" class="database">
+      <table class="db">
+        <tr>
+          <th>Nick</th>
+          <th>Duty</th>
+          <th>Date joined</th>
+        </tr>
+        <% citizensFiles.forEach(citizensFile => { %>
+        <tr>
+          <td><%= citizensFile.nick %></td>
+          <td><%= citizensFile.duty %></td>
+          <td><%= citizensFile.date %></td>
+        </tr>
+        <% }) %>
+      </table>
+    </section>
+    <footer></footer>
+  </body>
+</html>
