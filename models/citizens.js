@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-const d = new Date() 
+const d = new Date()
+ 
 let month = months[d.getMonth()]
 let future = d.getFullYear() + 1286
 const citizensSchema = new mongoose.Schema({
@@ -16,8 +17,7 @@ const citizensSchema = new mongoose.Schema({
     },
     date: {
         type: String,
-        required: true,
-        default: d.getDate() + " " + month + " " + future
+        required: true
     }
 })
 

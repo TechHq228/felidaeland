@@ -279,8 +279,10 @@ body {
 }
 
 .database {
-  min-height: 500px;
+/*  min-height: 500px; */
 }
+
+
 
 .db {
   margin-left: auto;
@@ -307,3 +309,18 @@ tr:nth-child(even) {
     padding-inline: 0.5rem;
   }
 }
+
+/* === non-grata === */
+
+.non-grata h2,
+p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+footer {
+  height: 200px;
+}
+

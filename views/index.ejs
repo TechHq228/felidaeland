@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="../vid/cat.png" />
+    <script defer src="script.js"></script>
     <title>Felidaeland</title>
   </head>
   <body>
@@ -63,8 +64,8 @@
         <form action="/citizensRoute" method="POST">
           <label for="nickname">Your Nickname</label>
           <input
-            pattern="^(?!fuck|fucking|piss|dick|nigger|nigga|nibba|ass|shit|bitch|asshole)(?![\s]).*"
-            title="No swear wordies and empty space please"
+            pattern="^(?!fuck|fucking|piss|dick|nigger|nigga|nibba|ass|shit|bitch|asshole|Ceska|Dovah|SirCoffee)(?![\s]).*"
+            title="No swear wordies, empty space and non-grata please"
             type="text"
             id="nickname"
             name="nickname"
@@ -91,6 +92,7 @@
               Teacher at Kittygarten
             </option></select
           ><br />
+	  <input name="datejoined" id="date-joined" type="hidden" value=""/>
           <button class="button button3" type="submit">Join!</button>
         </form>
       </div>
@@ -104,11 +106,43 @@
         </tr>
         <% citizensFiles.forEach(citizensFile => { %>
         <tr>
-          <td><%= citizensFile.nick %></td>
+          <td id="catNick"><%= citizensFile.nick %></td>
           <td><%= citizensFile.duty %></td>
           <td><%= citizensFile.date %></td>
         </tr>
         <% }) %>
+      </table>
+    </section>
+ <section class="non-grata">
+      <h2>Attention! <br />Persons Non-Grata below!</h2>
+      <p>
+        The Last Council meeting as of 12th March 3308 proposed a bill
+        concerning <i>persons non-grata</i>. Cat AI's final decision was, as
+        opposed to firstly discussed "terminate on sight" countermeasure, to trial
+        persons non-grata to an extensive and merciless bulli.</br> Additionally (and
+        logically of course) persons non-grata can't sign up on the form above.
+      </p>
+      <table class="db non-grata-table">
+        <tr>
+          <th>Nick</th>
+          <th>Date</th>
+          <th>Reason</th>
+        </tr>
+        <tr>
+          <td>Ceska_Z</td>
+          <td>12 March 3308</td>
+          <td>Neglecting of Cats' lives</td>
+        </tr>
+        <tr>
+          <td>Dovahdein</td>
+          <td>12 March 3308</td>
+          <td>Arch Nemesis</td>
+        </tr>
+        <tr>
+          <td>SirCoffee17</td>
+          <td>12 March 3308</td>
+          <td>Assassination attempt</td>
+        </tr>
       </table>
     </section>
     <footer></footer>
